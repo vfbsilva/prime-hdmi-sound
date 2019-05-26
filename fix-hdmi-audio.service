@@ -1,0 +1,11 @@
+[Unit]
+Description=nVidia HDMI Audio Fixer
+Before=systemd-logind.service display-manager.service
+After=module-init-tools.service
+
+[Service]
+Type=oneshot
+ExecStart=/root/fix-hdmi-audio.sh
+
+[Install]
+WantedBy=multi-user.target
